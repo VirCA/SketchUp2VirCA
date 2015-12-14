@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>VirCA Exporter</title>
+		
+		<script type="text/javascript">
+		function setExportOption(elem, val)
+		{
+			document.getElementById(elem).value = val;  
+		}
+		function setExportOptionCheckbox(elem, val)
+		{
+			document.getElementById(elem).checked = val;
+		}
+		function getExportOptionCheckbox(elem)
+		{
+			document.getElementById(elem).checked
+			HiddenInput.value = document.getElementById(elem).checked + ''
+		}
+		function exportExportModel()
+		{
+			window.location.href = 'skp:on_exportModel@true';
+		}
+		function exportExportRoom()
+		{
+			window.location.href = 'skp:on_exportRoom@true';
+		}
+		function exportCancel()
+		{
+			window.location.href = 'skp:on_cancel@true';
+		}
+		</script>
+		    <style type="text/css">
+			.firstColumn {
+				width: 240;
+				padding-top: 3px; 
+				padding-bottom: 17px;
+			}
+			.secondColumn {
+				width: 270px; 
+				padding-bottom: 20px;
+			}
+			sup.tip {
+			  position: relative;
+			  text-decoration: none;
+			}
+			sup.tip:hover:before {
+			  display: block;
+			  position: absolute; 
+			  padding: .5em;
+			  content: attr(title);
+			  min-width: 120px;
+			  text-align: center;
+			  width: auto;
+			  height: auto;
+			  white-space: nowrap;
+			  top: -32px;
+			  background: rgba(0,0,0,.8);
+			  -moz-border-radius:10px;
+			  -webkit-border-radius:10px;
+			  border-radius:10px;    
+			  color: #fff;
+			  font-size: 1.5em;
+			}
+			sup.tip:hover:after {
+			  position: absolute;
+			  display: block;
+			  content: "";  
+			  border-color: rgba(0,0,0,.8) transparent transparent transparent;
+			  border-style: solid;
+			  border-width: 10px;
+			  height:0;
+			  width:0;
+			  position:absolute;
+			  top: -8px;
+			  left:1em;
+			}
+		</style>
+	</head>
+	
+	<body bgcolor="#c0c0c0">
+		<input id="HiddenInput" type="hidden" />
+		<h2 style="font-family:arial;">SketchUp to VirCA Exporter</h2>
+		<table style="width:100%; padding-bottom:10px; font-family:arial;">
+			<tr>
+				<td class="firstColumn">
+					Export Name<sup class="tip" title="The name of the exported Model or Room folder." >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="ExportName" type="text" style="width:360px"/></td>
+			</tr>
+			<tr>
+				<td class="firstColumn">
+					Export Path<sup class="tip" title="The path of the exported Model or Room folder." >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="ExportPath" type="text" style="width:360px"/></td>
+			</tr>
+			<tr>
+				<td class="firstColumn">
+					Ogre XML Converter Path<sup class="tip" title="The path of the OgreXMLConverter.exe" >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="OgreXMLConverter" type="text" style="width:360px"/></td>
+			</tr>
+			<tr>
+				<td class="firstColumn">
+					Set Emmisive Values<sup class="tip" title="It is ideal if you apply lightless environment." >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="CheckboxEmissiveSet" type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="firstColumn">
+					Add Default Lights<sup class="tip" title="It only affect if you export a Room!" >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="CheckboxLightsSet" type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="firstColumn">
+					Model centring<sup class="tip" title="Put the model into the origin" >?</sup>:</td>
+				<td class="secondColumn">
+					<input id="CheckboxCentring" type="checkbox" /></td>
+			</tr>				
+		</table>
+		<input id="ButtonExportModel" type="button" onClick="exportExportModel()" value="Export Model" />&nbsp;&nbsp;&nbsp;
+		<input id="ButtonExportRoom" type="button" onClick="exportExportRoom()" value="Export Room" />&nbsp;&nbsp;&nbsp;		
+		<input id="ButtonCancel" type="button" onClick="exportCancel()" value="Cancel" />
+	</body>
+	
+</html>
