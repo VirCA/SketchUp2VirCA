@@ -1,8 +1,11 @@
-# SketchUp to VirCA Exporter 0.6b
+# SketchUp to VirCA Exporter 0.7b
 # Written by Sándor Tarsoly (MTA SZTAKI)
 # It is based on:
 # - Sketchup Backface Highlighting Version 1.0.0 Written by Kojack
 # - SketchUp to Ogre Exporter Version 1.3.4 Written by Bastien Bourineau
+# VERSION 0.7b
+# RELEASE NOTES
+# - Export path is set to VirCA 0.3.1365 rooms folder
 # VERSION 0.6b
 # RELEASE NOTES
 # - Forth and fifth arguments are added to specular values in materials
@@ -102,7 +105,7 @@ module VirCAExport
     def exportDialog()
         load "virca_exporter/su_virca_config.rb"
         if @@optionsDialog == nil
-            @@optionsDialog = UI::WebDialog.new("VirCA Exporter 0.6b Settings", true, "SketcUPVirCAExport", 720, 490, 250, 250, true);
+            @@optionsDialog = UI::WebDialog.new("VirCA Exporter 0.7b Settings", true, "SketcUPVirCAExport", 720, 490, 250, 250, true);
             @@optionsDialog.set_file(Sketchup.find_support_file("su_virca_export.htm","plugins/virca_exporter"),nil)
 			@@optionsDialog.set_size(720,490)
         end

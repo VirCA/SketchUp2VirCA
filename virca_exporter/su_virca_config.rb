@@ -10,11 +10,11 @@ module VirCAConfig
   @@convertXML = true
   @@exportRootFaces = true
   @@mergeComponents = true
-  @@name = "CaptainAmerica1969"
+  @@name = "MyVirCAModel"
   @@selectionOnly = true
   @@setEmissive = false
-  @@enableDefLights = true
-  @@enableCentring = true
+  @@enableDefLights = false
+  @@enableCentring = false
   def self.scale; @@scale; end
   def self.copyTextures; @@copyTextures; end
   def self.exportMeshes; @@exportMeshes; end
@@ -48,8 +48,8 @@ module VirCAConfig
   def self.enableDefLights=(v); @@enableDefLights=v; end
   def self.enableCentring=(v); @@enableCentring=v; end
   module Paths
-    @@export = "C:\\Users\\Public\\Documents\\VirCA"
-    @@converter = "c:\\OgreCommandLineTools\\OgreXMLConverter.exe"
+    @@export = "C:\\Users\\Public\\Documents\\VirCA\\VirCA 0.3.1365\\Media\\rooms"
+    @@converter = "C:\\OgreCommandLineTools\\OgreXMLConverter.exe"
     def self.export; @@export; end
     def self.converter; @@converter; end
     def self.export=(v); @@export=v; end
